@@ -22,12 +22,12 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     //    var characteristics: CBCharacteristic!
     var writeCharacteristic: CBCharacteristic!
     var bluetoothAvailable = false
-    //SETTINGS
+    //Change these settings
+    let deviceName = "Bluno"
     let deviceUUID = NSUUID(UUIDString: "DBBD02C8-765D-4340-95DC-35A7C69F420A")
     let peripheralCBUUID = "DFB0"
     let characteristicCBUUID = "DFB1"
     let message = "5"
-    let deviceName = "Bluno"
     
     
     override func viewDidLoad() {
