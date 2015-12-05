@@ -23,6 +23,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     var writeCharacteristic: CBCharacteristic!
     var bluetoothAvailable = false
     //SETTINGS
+    let deviceUUID = NSUUID(UUIDString: "DBBD02C8-765D-4340-95DC-35A7C69F420A")
     let peripheralCBUUID = "DFB0"
     let characteristicCBUUID = "DFB1"
     let message = "5"
@@ -108,7 +109,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         //        print(peripheral)
         
         if let nameOfDeviceFound = peripheral.name {
-            if (nameOfDeviceFound == deviceName) {
+            if nameOfDeviceFound == deviceName || peripheral.identifier == deviceUUID {
                 print("Discovered \(deviceName)")
                 print("")
                 print(peripheral)
@@ -121,7 +122,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
                 self.centralManager.connectPeripheral(peripheral, options: nil)
             }
             else {
-                print("Found non \(deviceName) device.")
+                print("Found \(peripheral) device.")
             }
         }
     }
