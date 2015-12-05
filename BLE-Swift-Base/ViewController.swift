@@ -25,8 +25,8 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     //Change these settings
     let deviceName = "Bluno"
     let deviceUUID = NSUUID(UUIDString: "DBBD02C8-765D-4340-95DC-35A7C69F420A")
-    let peripheralCBUUID = "DFB0"
-    let characteristicCBUUID = "DFB1"
+    let serviceUUID = "DFB0"
+    let characteristicUUID = "DFB1"
     let message = "5"
     
     
